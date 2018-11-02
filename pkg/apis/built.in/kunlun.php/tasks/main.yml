@@ -1,0 +1,13 @@
+---
+- import_role:
+    name: geerlingguy.php
+  become: true
+  become_user: root
+- import_role:
+    name: geerlingguy.composer
+  become: true
+  become_user: root
+- import_role:
+    name: geerlingguy.php-mysql
+  become: true
+  become_user: root
