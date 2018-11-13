@@ -15,3 +15,9 @@
     name: geerlingguy.php-mysql
   become: true
   become_user: root
+
+# run the composer
+- name: Install packages (composer)
+  shell: composer install
+  args:
+    chdir: "{{ project_src_root }}"
