@@ -1,5 +1,9 @@
 ---
 - import_role:
+    name: nginxinc.nginx
+  become: true
+  become_user: root
+- import_role:
     name: geerlingguy.php
   become: true
   become_user: root
@@ -21,3 +25,13 @@
   shell: composer install
   args:
     chdir: "{{ project_src_root }}"
+
+# setup the nginx config.
+- name: Update nginx config
+  template:
+    src: nginx.j2
+    dest: "{{ nginx_config_root }}/conf.d/{{ kl_site_name }}.conf"
+    owner: "{{ ansible_user }}"
+    mode: 0644
+  become: true
+  become_user: root

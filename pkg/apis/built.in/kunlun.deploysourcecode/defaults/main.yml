@@ -1,3 +1,4 @@
 project_git_repo: ""
-project_src_root: /mnt/data/sourcecode
+project_root: /mnt/data/klproject
+project_src_root: "{{ project_root }}/sourcecode"
 project_git_revision: ""
