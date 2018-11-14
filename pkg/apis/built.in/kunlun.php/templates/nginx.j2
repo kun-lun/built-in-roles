@@ -1,6 +1,5 @@
 server {
   listen {{ dashboard_nginx_port }};
-  # server_name {{ dashboard_nginx_host }};
   access_log {{ project_log_root }}/dashboard.nginx.access.log;
   error_log {{ project_log_root }}/dashboard.nginx.error.log;
 
