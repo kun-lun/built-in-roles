@@ -4,6 +4,7 @@ server {
   error_log {{ project_log_root }}/dashboard.nginx.error.log;
 
   root {{ project_src_root }};
+  try_files $uri /index.php?$query_string;
 
   location ~ [^/]\.php(/|$) {
       fastcgi_split_path_info  ^(.+\.php)(/.+)$;
