@@ -3,6 +3,8 @@ server {
   access_log {{ project_log_root }}/dashboard.nginx.access.log;
   error_log {{ project_log_root }}/dashboard.nginx.error.log;
 
+  root {{ project_src_root }};
+
   location ~ [^/]\.php(/|$) {
       fastcgi_split_path_info  ^(.+\.php)(/.+)$;
       fastcgi_index            index.php;
