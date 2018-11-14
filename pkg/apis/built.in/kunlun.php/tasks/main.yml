@@ -5,8 +5,8 @@
   become_user: root
 - import_role:
     name: geerlingguy.php
-    vars:
-      php_enable_php_fpm: true
+  vars:
+    php_enable_php_fpm: true
   become: true
   become_user: root
 - import_role:
