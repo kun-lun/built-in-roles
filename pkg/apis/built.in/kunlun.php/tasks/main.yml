@@ -38,6 +38,14 @@
   become: true
   become_user: root
 
+# remove the default nginx site
+- name: Remove the default configuration
+  file:
+    path: "{{ nginx_config_root }}/conf.d/default.conf"
+    state: absent
+  become: true
+  become_user: root
+
 # setup the nginx config.
 - name: Update nginx config
   template:
