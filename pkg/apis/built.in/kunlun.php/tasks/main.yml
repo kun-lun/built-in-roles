@@ -57,3 +57,10 @@
     mode: 0644
   become: true
   become_user: root
+
+- name: Restart nginx
+  service:
+    name: nginx
+    state: restarted
+  become: true
+  become_user: root
